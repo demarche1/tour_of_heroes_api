@@ -10,10 +10,11 @@ gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails", "~> 5.0"
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
-  gem 'sqlite3', '~> 1.4'
   gem 'faker', '~> 2.19'
   gem 'listen', '~> 3.3'
   gem 'spring'
@@ -22,4 +23,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem "pg", "~> 1.2"
+end
+
+group :test do
+  gem "shoulda-matchers", "~> 5.0"
+  gem "simplecov", "~> 0.21.2", require: false
 end
