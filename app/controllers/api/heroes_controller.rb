@@ -2,11 +2,11 @@ class Api::HeroesController < ApplicationController
   include Authenticable
 
   before_action :authenticable_with_token
-  before_action :set_hero, only: [:show, :update, :destroy]
+  before_action :set_hero, only: %i[show update destroy]
 
   # GET /heroes
   def index
-    @heroes = Hero.by_token(@token).search(params[:term]).sorted_by_name
+    @heroes = Hero.by_token(@token).search(params[:name]).sorted_by_name
 
     render json: @heroes
   end
@@ -42,13 +42,14 @@ class Api::HeroesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hero
-      @hero = Hero.by_token(@token).find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def hero_params
-      params.require(:hero).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hero
+    @hero = Hero.by_token(@token).find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def hero_params
+    params.require(:hero).permit(:name)
+  end
 end
