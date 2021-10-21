@@ -5,7 +5,7 @@ module Authenticable
     @token ||= request.headers['Authorization']
 
     unless valid_token?
-      render json: { errors: 'Informe um token para se identificar!' },
+      render json: { errors: 'Provide an Authorization token' },
              status: :unauthorized
     end
   end
