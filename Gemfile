@@ -19,6 +19,7 @@ group :development do
   gem 'faker', '~> 2.19'
   gem 'listen', '~> 3.3'
   gem 'spring'
+  gem 'spring-commands-rspec', '~> 1.0'
 end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
