@@ -29,6 +29,6 @@ This repository is part of the [Curso de Ruby on Rails 6 como API](https://www.y
 
 https://tutorial-tour-of-heroes-api.herokuapp.com/api/heroes
 
-## Testes
+## Tests
 
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/demarche1/tour_of_heroes_api)
