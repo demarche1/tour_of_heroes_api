@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 gem 'active_model_serializers', '~> 0.10.12'
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 5.6'
 gem 'rack-cors'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'rubocop', require: false
